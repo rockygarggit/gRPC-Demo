@@ -1,23 +1,27 @@
-syntax = "proto3";
+syntax = "proto3"; // this protobuf file is based on Proto version 3 standards 
 
 option csharp_namespace = "gRPCDemo.Protos";
 package Product;
 
-
+// Service definition
 service ProductGrpcService {
 
+// method 1
   rpc GetProducts (ProductRequest) returns (ProductResponse);
-  rpc GetNewProducts (ProductRequest) returns (stream Products);
 
+  //method 2
+  rpc GetNewProducts (ProductRequest) returns (stream Products);
 }
 
-
+// Model or schema definition (There is no void keyword, so define a blank class instead)
 message ProductRequest {}
 
+// Model or schema definition
 message ProductResponse{
 	repeated Products products = 1;
 }
 
+// Model or schema definition 
 message Products {
   int32 productId = 1;
   string name = 2;

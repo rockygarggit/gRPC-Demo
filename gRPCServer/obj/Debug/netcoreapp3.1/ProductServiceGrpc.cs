@@ -8,6 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace gRPCDemo.Protos {
+  /// <summary>
+  /// Service definition
+  /// </summary>
   public static partial class ProductGrpcService
   {
     static readonly string __ServiceName = "Product.ProductGrpcService";
@@ -40,11 +43,24 @@ namespace gRPCDemo.Protos {
     [grpc::BindServiceMethod(typeof(ProductGrpcService), "BindService")]
     public abstract partial class ProductGrpcServiceBase
     {
+      /// <summary>
+      /// method 1
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::gRPCDemo.Protos.ProductResponse> GetProducts(global::gRPCDemo.Protos.ProductRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      ///method 2
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>A task indicating completion of the handler.</returns>
       public virtual global::System.Threading.Tasks.Task GetNewProducts(global::gRPCDemo.Protos.ProductRequest request, grpc::IServerStreamWriter<global::gRPCDemo.Protos.Products> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));

@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Grpc.Core;
 using Grpc.Net.Client;
 using gRPCDemo.Protos;
-using gRPCDemo;
-using System.Threading.Tasks;
+using System;
 using System.Linq;
-using Grpc.Core;
+using System.Threading.Tasks;
 
 namespace gRPCClient
 {
@@ -12,7 +11,6 @@ namespace gRPCClient
     {
         static  async Task Main(string[] args)
         {
-
             Console.WriteLine("============= Unary mode Example=====================");
 
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
@@ -36,8 +34,6 @@ namespace gRPCClient
                     Console.WriteLine($"Product Id: {product.ProductId},Name :  {product.Name},  Description : {product.ProductDescription},  Price: {product.ProductPrice}");
                 }
             }
-
-
             Console.ReadLine();
         }
     }

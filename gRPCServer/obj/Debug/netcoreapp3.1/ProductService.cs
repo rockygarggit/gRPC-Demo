@@ -45,6 +45,9 @@ namespace gRPCDemo.Protos {
 
   }
   #region Messages
+  /// <summary>
+  /// Model or schema definition (There is no void keyword, so define a blank class instead)
+  /// </summary>
   public sealed partial class ProductRequest : pb::IMessage<ProductRequest> {
     private static readonly pb::MessageParser<ProductRequest> _parser = new pb::MessageParser<ProductRequest>(() => new ProductRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -146,6 +149,9 @@ namespace gRPCDemo.Protos {
 
   }
 
+  /// <summary>
+  /// Model or schema definition
+  /// </summary>
   public sealed partial class ProductResponse : pb::IMessage<ProductResponse> {
     private static readonly pb::MessageParser<ProductResponse> _parser = new pb::MessageParser<ProductResponse>(() => new ProductResponse());
     private pb::UnknownFieldSet _unknownFields;
@@ -267,6 +273,9 @@ namespace gRPCDemo.Protos {
 
   }
 
+  /// <summary>
+  /// Model or schema definition 
+  /// </summary>
   public sealed partial class Products : pb::IMessage<Products> {
     private static readonly pb::MessageParser<Products> _parser = new pb::MessageParser<Products>(() => new Products());
     private pb::UnknownFieldSet _unknownFields;
